@@ -15,7 +15,7 @@ logging.basicConfig(level=logging.DEBUG)
 # Initialize the sentiment analysis pipeline
 sentiment_pipeline = pipeline("sentiment-analysis", model="ProsusAI/finbert")
 
-# In-memory portfolio (can be replaced with a database)
+
 portfolio = {}
 
 
@@ -35,7 +35,7 @@ def get_stock_dataA(ticker):
         logging.error(f"Error fetching stock data: {e}")
         return jsonify({"error": str(e)}), 500
 
-# Manage the portfolio (CRUD operations)
+#  the portfolio (CRUD operations)
 @app.route("/api/portfolioA", methods=["GET", "POST", "DELETE"])
 def manage_portfolioA():
     global portfolio
